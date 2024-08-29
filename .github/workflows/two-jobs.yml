@@ -15,16 +15,19 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  job-linux:
+  jobLinux:
+    name: Job Linux
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a simple script Hello Word!
         run: cat /etc/os-release
 
-  job-windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run a simple script to check operation system!
-        run: Get-CimInstance Win32_OperatingSystem
+  jobWindows:
+                name: Job Windows
+                runs-on: windows-latest
+                steps:
+                        - name: Etapa 01
+                          uses: actions/checkout@v4
+                        - name: Etapa 02
+                          run: "Get-CimInstance Win32_OperatingSystem"
