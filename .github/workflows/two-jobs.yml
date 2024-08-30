@@ -16,12 +16,15 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   jobLinux:
-    name: Job Linux
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run a simple script Hello Word!
-        run: cat /etc/os-release
+                name: Job Linux
+                runs-on: ubuntu-latest
+                steps:
+                        - name: Etapa 01
+                          uses: actions/checkout@v4
+                        - name: Etapa 02
+                          run: |
+                                  echo "$(cat README.md)"
+                                  uname -a
 
   jobWindows:
                 name: Job Windows
